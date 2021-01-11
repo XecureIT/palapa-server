@@ -1,0 +1,160 @@
+twilio:
+  accountId: <NotEmpty>
+  accountToken: <NotEmpty>
+  numbers:
+    - <NotNull>
+  localDomain: <NotEmpty>
+  messagingServicesId:
+
+#zenziva:
+#  enabled: false # default false
+#  userKey: <NotEmpty>
+#  apiKey: <NotEmpty>
+
+#nexmo:
+#  enabled: false # default false
+#  apiKey: <NotEmpty>
+#  apiSecret: <NotEmpty>
+#  brandName: <NotEmpty>
+
+push:
+  queueSize: 200
+
+attachments:
+  accessKey: <NotEmpty>
+  accessSecret: <NotEmpty>
+  bucket: <NotEmpty>
+  region: us-east-1
+  endpoint: <NotEmpty>
+
+cdn:
+  accessKey: <NotEmpty>
+  accessSecret: <NotEmpty>
+  bucket: <NotEmpty>
+  region: us-east-1
+  endpoint: <NotEmpty>
+
+cache:
+  url: redis://127.0.0.1:6379/2
+  replicaUrls:
+    - <NotNull>
+
+directory:
+  redis:
+    url: redis://127.0.0.1:6379/1
+    replicaUrls:
+      - <NotNull>
+#  sqs:
+#    accessKey: <NotEmpty>
+#    accessSecret: <NotEmpty>
+#    queueUrl: <NotEmpty>
+#    region: us-east-1
+  client:
+    userAuthenticationTokenSharedSecret: c2VjcmV0 # <NotEmpty base64>
+    userAuthenticationTokenUserIdSecret: c2VjcmV0 # <NotEmpty base64>
+#  server:
+#    replicationUrl: <NotEmpty>
+#    replicationPassword: <NotEmpty>
+#    replicationCaCertificate: <NotEmpty>
+
+#accountDatabaseCrawler:
+#  chunkSize:
+#  chunkIntervalMs:
+
+pushScheduler:
+  url: <NotEmpty>
+  replicaUrls:
+    - <NotNull>
+
+messageCache:
+  redis:
+    url: <NotEmpty>
+    replicaUrls:
+      - <NotNull>
+  persistDelayMinutes:
+
+messageStore:
+  driverClass: org.postgresql.Driver
+  url: jdbc:postgresql://127.0.0.1:5432/messagedb
+#  circuitBreaker:
+#    failureRateThreshold: 50
+#    ringBufferSizeInHalfOpenState: 10
+#    ringBufferSizeInClosedState: 100
+#    waitDurationInOpenStateInSeconds: 10
+
+abuseDatabase:
+  driverClass: org.postgresql.Driver
+  url: jdbc:postgresql://127.0.0.1:5432/abusedb
+#  circuitBreaker:
+#    failureRateThreshold: 50
+#    ringBufferSizeInHalfOpenState: 10
+#    ringBufferSizeInClosedState: 100
+#    waitDurationInOpenStateInSeconds: 10
+
+keysDatabase:
+  driverClass: org.postgresql.Driver
+  url: jdbc:postgresql://127.0.0.1:5432/keysdb
+#  circuitBreaker:
+#    failureRateThreshold: 50
+#    ringBufferSizeInHalfOpenState: 10
+#    ringBufferSizeInClosedState: 100
+#    waitDurationInOpenStateInSeconds: 10
+
+accountsDatabase:
+  driverClass: org.postgresql.Driver
+  url: jdbc:postgresql://127.0.0.1:5432/accountsdb
+#  circuitBreaker:
+#    failureRateThreshold: 50
+#    ringBufferSizeInHalfOpenState: 10
+#    ringBufferSizeInClosedState: 100
+#    waitDurationInOpenStateInSeconds: 10
+
+#read_database:
+
+turn:
+  secret: <NotEmpty>
+  uris:
+    - <NotNull>
+
+gcm:
+  senderId:
+  apiKey: <NotEmpty>
+
+apn:
+  pushCertificate: <NotEmpty>
+  pushKey: <NotEmpty>
+  bundleId: <NotEmpty>
+
+unidentifiedDelivery:
+  certificate: c2VjcmV0 # <NotNull base64>
+  privateKey: MTIzNDU2Nzg5MDEyMzQ1Njc4OTAxMjM0NTY3ODkwMTI= # <NotNull base64 from 32 chars>
+  expiresDays:
+
+#voiceVerification:
+#  url: <NotEmpty>
+#  locales:
+#    - <NotNull>
+
+recaptcha:
+  secret: <NotEmpty>
+
+storageService:
+  userAuthenticationTokenSharedSecret: c2VjcmV0 # <NotEmpty base64>
+
+backupService:
+  userAuthenticationTokenSharedSecret: c2VjcmV0 # <NotEmpty base64>
+
+#smsVerification:
+#  smsIOSVerificationText: "Your SCP verification code: %s\n\nOr tap: pscp://verify/%s"
+#  smsAndroidNGVerificationText: "<#> Your SCP verification code: %s\n\ndoDiFGKPO1r"
+#  smsVerificationText: "Your SCP verification code: %s"
+
+#testDevices: # Test devices configuration
+#  -
+#    number: <NotEmpty>
+#    code: <NotNull>
+
+#controlPanel: # Control Panel configuration
+#  enabled: false # default false
+#  authKey: <NotEmpty UUID>
+#  authSecret: <NotEmpty>
